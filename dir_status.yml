@@ -1,4 +1,5 @@
 ---
+# This Ansible playbook, checks if a directory exists at /local/test, and if it exists, it assigns user/group permission as defined below
 - hosts: all
   tasks:
   - name: check for directory
