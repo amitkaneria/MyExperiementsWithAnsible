@@ -1,0 +1,8 @@
+---
+# This Ansible playbook copies files from /tmp directory to another /apps directory
+- hosts: all
+  tasks:
+  - name: file copy
+    file:
+      src: /tmp/123.tar.gz
+      dest: /apps
