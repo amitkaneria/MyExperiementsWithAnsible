@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+  - name: check for directory
+    stat:
+      path: /local/test
+    register: dir_status
+  - name: Set owner and Group
+    file:
+      path: /local/test
+      owner: cassandra
+      group: cassandra
+      state: directory
+    when: dir_status.stat.isdir is defined and dir_status.stat.isdir
